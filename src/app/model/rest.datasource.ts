@@ -17,19 +17,19 @@ export class RestDataSource {
     auth_token: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = "http://localhost:1000/";
+        this.baseUrl =  "http://localhost:1000/";
         console.log(this.baseUrl);
         // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
-    // Inventory
+    // Product
     getProductList(): Observable<Product[]> {
         return this.http.get<Product[]>(this.baseUrl + "product/list");
     }
 
-    insertInventory(item: Inventory): Observable<Inventory> {
-        return this.http.post<Inventory>(
-                this.baseUrl + "inventory/add",
+    insertProduct(item: Product): Observable<Product> {
+        return this.http.post<Product>(
+                this.baseUrl + "products/add",
                 item, 
                 this.provideToken()
             ).pipe(map(response => {
@@ -41,16 +41,16 @@ export class RestDataSource {
             }));
     }
 
-    updateInventory(item: Inventory): Observable<ResponseModel> {
-        return this.http.put<ResponseModel>(`${this.baseUrl}inventory/edit/${item._id}`,
+    updateProduct(item: Product): Observable<ResponseModel> {
+        return this.http.put<ResponseModel>(`${this.baseUrl}products/edit/${item._id}`,
             item, this.provideToken()).pipe(map(response => {
                 return response;
             }),
             catchError(error => {return of(error.error)}));
     }
 
-    deleteInventory(id: string): Observable<ResponseModel> {
-        return this.http.delete<ResponseModel>(`${this.baseUrl}inventory/delete/${id}`,
+    deleteProduct(id: string): Observable<ResponseModel> {
+        return this.http.delete<ResponseModel>(`${this.baseUrl}products/delete/${id}`,
             this.provideToken()).pipe(map(response => {
                 return response;
             }),
@@ -74,7 +74,7 @@ export class RestDataSource {
     }
 
     signupUser(user: User): Observable<ResponseModel> {
-        return this.http.post<ResponseModel>(this.baseUrl + "users/signup", user)
+        return this.http.post<ResponseModel>(this.baseUrl + "users/register", user)
             .pipe(map(response => {
                 return response;
             }),
