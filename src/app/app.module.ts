@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
-import { StoreModule } from "./store/products/store.module";
+import { SignInComponent } from './store/auth/signin.component';
+import { RegisterComponent } from './store/auth/register.component';
+import { AddEditComponent } from './store/products/add_edit.component';
 import { StoreComponent } from "./store/products/store.component";
+import { StoreModule } from "./store/products/store.module";
+import { AuthModule } from './store/auth/auth.module';
+import { AuthGuard } from "./store/auth/auth.guard";
+
 // import { CheckoutComponent } from "./store/checkout.component";
 // import { CartDetailComponent } from "./store/cartDetail.component";
-import { RouterModule } from "@angular/router";
 // import { StoreFirstGuard } from "./storeFirst.guard";
 
 @NgModule({
@@ -16,11 +21,17 @@ import { RouterModule } from "@angular/router";
   imports: [
     BrowserModule, 
     StoreModule,
+    AuthModule,
     RouterModule.forRoot([
-      { path: "store", component: StoreComponent },
-      // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
+      { path: "", component: StoreComponent },
+      { path: "product/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
+      { path: "product/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
+      { path: "users/signin", component: SignInComponent },
+      { path: "users/register", component: RegisterComponent },
+      
+            // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       // { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
-      { path: "**", redirectTo: "/store" }
+      { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
     ])
   ],
   providers: [],
@@ -29,30 +40,3 @@ import { RouterModule } from "@angular/router";
 export class AppModule { }
 
 
-
-
-// import { NgModule } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
-// import { RouterModule } from "@angular/router";
-// import { AppComponent } from './app.component';
-
-// import { IndexComponent } from './store/store.component';
-// import { IndexModule } from './store/store.module';
-// // import { ProductModule } from "./productview/product/inventory.module";
-
-// @NgModule({
-//   declarations: [
-//     AppComponent 
-//   ],
-//   imports: [ 
-//     BrowserModule, 
-//     IndexModule,
-//     RouterModule.forRoot([
-//       { path: "", component: IndexComponent },
-//       { path: "**", redirectTo: "" }
-//     ])
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule { }
