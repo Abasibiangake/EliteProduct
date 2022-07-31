@@ -5,45 +5,63 @@ import { ResponseModel } from "./response.model";
 
 @Injectable()
 export class ProductRepository {
-
-    private product: Product[] = [];
+   
+    private products: Product[] = [];
+    private categories: string[] = [];
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getProductList().subscribe(data => {
-            this.product = data;
+            this.products = data;
+            this.categories = data.map(p => p.category)
+                .filter((c, index, array) => array.indexOf(c) == index).sort();
         });
     }
 
-    getProduct(): Product[] {
-        return this.product;
+    //get products within category
+    getProducts(category: string = "" ): Product[] {
+        return this.products
+            .filter(p => category == "" || category == p.category);
     }
 
-    getItem(id: string): Product {
-        return (this.product.find(item => item._id === id)!);
+    //get specific product
+    getProduct(id: string): Product {
+        return (this.products.find(p => p.id === id)!);
     }
 
+    //get list of categories
+    getCategories(): string[] {
+        return this.categories;
+    }
+
+    //get all products
+    getProductdb(): Product[] {
+        return this.products;
+    }
+
+
+    //update/save product
     async saveProduct(item: Product) {
 
         // If it does not have id, then create a new item.
-        if (item._id == null || item._id == "") {
+        if (item.id == null || item.id == "") {
             this.dataSource.insertProduct(item)
                 .subscribe(response => {
-                    if(response._id) // If API created
+                    if(response.id) // If API created
                     {
-                        this.product.push(response);
+                        this.products.push(response);
                     }
-                    else{ // If API send error.
-                        // Convert into ResponseModel to get the error message.
+                    else{
                         let error = response as ResponseModel;  
                         alert(`Error: ${error.message}`);
                     }
                 });
+
+        // If it has id, then update a existing item.
         } else {
-            // If it has id, then update a existing item.
             this.dataSource.updateProduct(item).subscribe(response => {
                 if (response.success) {
-                    this.product.splice(this.product.
-                        findIndex(i => i._id == item._id), 1, item);
+                    this.products.splice(this.products.
+                        findIndex(i => i.id == item.id), 1, item);
                 }
                 else{
                     alert(`Error: ${response.message}`);
@@ -52,11 +70,12 @@ export class ProductRepository {
         }
     }
 
+    //delete product
     deleteProduct(id: string) {
         this.dataSource.deleteProduct(id).subscribe(response => {
             if (response.success) {
-                this.product.splice(this.product.
-                    findIndex(item => item._id == id), 1);                                
+                this.products.splice(this.products.
+                    findIndex(item => item.id == id), 1);                                
             }
             else{
                 alert(`Error: ${response.message}`);

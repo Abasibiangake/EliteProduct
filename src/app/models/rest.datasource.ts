@@ -7,8 +7,6 @@ import { Product } from "./product.model";
 import { User } from "./user.model";
 import { ResponseModel } from "./response.model";
 
-// const PROTOCOL = "http";
-// const PORT = 1000; //should be same as backend
 
 @Injectable()
 export class RestDataSource {
@@ -16,15 +14,14 @@ export class RestDataSource {
     baseUrl: string;
     auth_token: string;
 
+    //Localhost:1000
     constructor(private http: HttpClient) {
-        this.baseUrl =  "http://localhost:1000/";
+        this.baseUrl = "http://localhost:1000/";
         console.log(this.baseUrl);
-        // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
-    // Product
     getProductList(): Observable<Product[]> {
-        return this.http.get<Product[]>(this.baseUrl + "product/list");
+        return this.http.get<Product[]>(this.baseUrl + "products/list");
     }
 
     insertProduct(item: Product): Observable<Product> {
@@ -42,7 +39,7 @@ export class RestDataSource {
     }
 
     updateProduct(item: Product): Observable<ResponseModel> {
-        return this.http.put<ResponseModel>(`${this.baseUrl}products/edit/${item._id}`,
+        return this.http.put<ResponseModel>(`${this.baseUrl}products/edit/${item.id}`,
             item, this.provideToken()).pipe(map(response => {
                 return response;
             }),
@@ -57,7 +54,6 @@ export class RestDataSource {
             catchError(error => {return of(error.error)}));
     }
 
-    // User endpoint of the API
     authenticate(user: string, pass: string): Observable<ResponseModel> {
         return this.http.post<any>(this.baseUrl + "users/signin", 
         {
@@ -65,7 +61,6 @@ export class RestDataSource {
             password: pass
         }).pipe(
             map(response => {
-                // console.log(response);
                 this.auth_token = response.success ? response.token : null;
                 return response;
             }),
@@ -73,7 +68,7 @@ export class RestDataSource {
         );
     }
 
-    signupUser(user: User): Observable<ResponseModel> {
+    registerUser(user: User): Observable<ResponseModel> {
         return this.http.post<ResponseModel>(this.baseUrl + "users/register", user)
             .pipe(map(response => {
                 return response;
@@ -81,7 +76,7 @@ export class RestDataSource {
             catchError(error => {return of(error.error)}));
     }
 
-    // Previously called getOptions()
+    //Method used Above
     private provideToken() {
         return {
             headers: new HttpHeaders({

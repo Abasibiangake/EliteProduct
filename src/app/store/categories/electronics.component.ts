@@ -4,22 +4,22 @@ import { Product } from "../../models/product.model";
 import { ProductRepository } from "../../models/product.repository";
 
 @Component({
-    selector: "clothing-product",
-    templateUrl: "clothing.component.html",
+    selector: "electronics-product",
+    templateUrl: "electronics.component.html",
     styleUrls: ['./category.component.css']
 
 })
 
-export class ClothingCategoryComponent {
+export class ElectronicsCategoryComponent {
 
-    title = 'Clothing Category';
+    title = 'Electronics Category';
 
     constructor(private repository: ProductRepository,
         private router: Router) 
     { }
 
     get productList(): Product[] {
-        return this.repository.getProducts("Clothing");        
+        return this.repository.getProducts("Electronics");        
     }
 
     deleteMethod(id: string) {

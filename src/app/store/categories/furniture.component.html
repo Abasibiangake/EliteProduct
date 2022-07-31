@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/productList.css">
+</head>
+<body>
+    <%- include ('../partials/header'); -%> -->
+<app-header [title]="title"></app-header>
+<!-- <div>Clothing page</div> -->
+<main class="container">
+    <div class="column">
+        <h1 style="margin-left: 3%; padding-bottom: 2%;">{{title}} </h1>
+        <br>
+
+            <!-- <% if (list[i].category=='Furniture') { %> -->
+            <!-- <% for (let i=0;i<list.length;i++){%> -->
+                <tr *ngFor="let list of productList">
+                    <div *ngIf = "list.category==='Furniture' "> 
+                    <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a class="img-container" routerLink="#">
+                                <img class="imgview" src="{{list.image }}" width="600" height="300" >
+                            </a>
+                            <p>{{list.title }} </p>
+                            <p>{{list.condition}} </p>
+                            <p>${{list.price}} </p>
+                            <br/>
+                            <div class="social-icons" style="width:fit-content;">
+                                <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                    Add to Cart</a>
+                                   
+                                    
+                                <a [routerLink]="['/products/edit/', list.id]" class="btn btn-primary btn-sm" style="margin-left:1rem;">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a routerLink="/products/delete/{{list.id}}" class="btn btn-danger btn-sm" style="margin-left: 1rem;">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+        
+                            <!-- <img id="image" src="<%=`/images/clothing/${list[i].condition.image}`%>" /> -->
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            </tr>
+            
+
+        </div>
+    </main>
+
+<app-footer></app-footer>
