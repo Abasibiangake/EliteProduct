@@ -1,12 +1,11 @@
 <app-header></app-header>
 
 <div class="container-add">
-    <div class="row">
+    <div class="row justify-content-lg-center">
 
-        <div class="offset-md-3 col-md-3">
+        <div class="col-8">
             <h1>{{ title }}</h1>
-            <hr>
-            <br>
+            <br><hr><br>
 
             <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
                 {{message}}
@@ -53,7 +52,7 @@
                 <br>
                 
                 <div class="form-group">
-                    <input class="btn btn-primary" style="width: fit-content" type="submit" value="Create account" />
+                    <input class="btn btn-primary" type="submit" value="Create account" />
                 </div>
                 <br>
             </form>
