@@ -26,7 +26,7 @@ export class SignInComponent {
                     if (response.success) {
                         this.router.navigateByUrl(this.auth.redirectUrl || "");
                     }
-                    this.message = response.message;
+                    this.message = response.message!;
                 });
         } else {
             this.message = "Form Data Invalid";

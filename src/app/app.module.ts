@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
+
 import { AppComponent } from './app.component';
 import { SignInComponent } from './store/auth/signin.component';
 import { RegisterComponent } from './store/auth/register.component';
 import { AddEditComponent } from './store/products/add_edit.component';
 import { StoreComponent } from "./store/products/store.component";
+
 import { StoreModule } from "./store/products/store.module";
 import { AuthModule } from './store/auth/auth.module';
 import { AuthGuard } from "./store/auth/auth.guard";
+
 import {CategoriesModule} from './store/categories/categories.module';
 import { ClothingCategoryComponent } from './store/categories/clothing.component';
 import { FurnitureCategoryComponent } from './store/categories/furniture.component';
@@ -28,6 +31,7 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
   imports: [
     BrowserModule, 
     StoreModule,
+    CategoriesModule,
     AuthModule,
     RouterModule.forRoot([
       { path: "", component: StoreComponent },
@@ -43,12 +47,13 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
       { path: "users/signin", component: SignInComponent },
       { path: "users/register", component: RegisterComponent },
       
-            // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
+      // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       // { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
+
       { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
     ])
   ],
-  providers: [],
+  providers: [ AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
