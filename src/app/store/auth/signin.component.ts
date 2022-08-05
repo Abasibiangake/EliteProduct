@@ -4,7 +4,8 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../models/auth.service";
 
 @Component({
-    templateUrl: "signin.component.html"
+    templateUrl: "signin.component.html",
+    styleUrls: ['../products/add_edit.component.css']
 })
 
 export class SignInComponent {
@@ -23,7 +24,7 @@ export class SignInComponent {
             this.auth.authenticate(this.username, this.password)
                 .subscribe(response => {
                     if (response.success) {
-                        this.router.navigateByUrl(this.auth.redirectUrl || "");
+                        this.router.navigateByUrl(this.auth.redirectUrl || "/");
                     }
                     this.message = response.message;
                 });

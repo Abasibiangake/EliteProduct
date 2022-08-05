@@ -38,8 +38,8 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
       { path: "categories/electronics", component: ElectronicsCategoryComponent },
       { path: "categories/outdoor", component: OutdoorCategoryComponent },
 
-      { path: "product/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
-      { path: "product/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
+      { path: "products/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
+      { path: "products/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "users/signin", component: SignInComponent },
       { path: "users/register", component: RegisterComponent },
       
@@ -48,7 +48,7 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
       { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
     ])
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

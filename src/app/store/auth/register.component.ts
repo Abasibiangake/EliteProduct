@@ -5,7 +5,8 @@ import { AuthService } from "../../models/auth.service";
 import { User } from "../../models/user.model";
 
 @Component({
-    templateUrl: "register.component.html"
+    templateUrl: "register.component.html",
+    styleUrls: ['../products/add_edit.component.css']
 })
 
 export class RegisterComponent {

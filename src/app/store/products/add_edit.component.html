@@ -1,11 +1,11 @@
 <app-header [title]="title"></app-header>
 
 <div class="container-add">
-    <div class="row">
+    <div class="row justify-content-lg-center">
 
-        <div class="offset-md-3 col-md-3">
+        <div class="col-8">
             <h1>{{editing ? "Edit you ad" : "Create an ad"}}</h1>
-            <hr><br>
+            <br><hr><br>
 
             <form novalidate #form="ngForm" (ngSubmit)="save(form)">
 
@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label>Select Category:</label>
                     <select name="category" [(ngModel)]="item.category" required>
-                        <option default>--select--</option>
+                        <option value="" hidden>- - Select - -</option>
                         <option> Clothing</option>
                         <option> Furniture</option>
                         <option> Electronics</option>
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <label>Condition:</label>
                     <select name="condition" [(ngModel)]="item.condition" required>
-                        <option default>--select--</option>
+                        <option value="undefined" hidden>- - Select - -</option>
                         <option> New</option>
                         <option> Used - Like New</option>
                         <option> Used - Good</option>
