@@ -1,0 +1,46 @@
+
+ <app-header [title]="title"></app-header>
+
+    <!-- <div>Clothing page</div> -->
+    <main class="container">
+        <div class="column">
+            <h1 style="margin-left: 3%; padding-bottom: 2%;">{{title}}</h1>
+            <br>
+
+            <tr *ngFor="let list of productList">
+            <div *ngIf = "list.category==='Electronics' "> 
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <a class="img-container" routerLink="#">
+                                <img class="imgview" src="{{list.image }}" width="600" height="300" >
+                            </a>
+                            <p>{{list.title }} </p>
+                            <p>{{list.condition}} </p>
+                            <p>${{list.price}} </p>
+                            <br/>
+                            <div class="social-icons" style="width:fit-content;">
+                                <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                    Add to Cart</a>
+                                   
+                                    
+                                <a [routerLink]="['/products/edit/', list.id]" class="btn btn-primary btn-sm" style="margin-left:1rem;">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a routerLink="/products/delete/{{list.id}}" class="btn btn-danger btn-sm" style="margin-left: 1rem;">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+        
+                            <!-- <img id="image" src="<%=`/images/clothing/${list[i].condition.image}`%>" /> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+            </div> 
+            </tr>
+        </div>
+    </main>
+
+<app-footer></app-footer>
