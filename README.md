@@ -1,7 +1,7 @@
 # EliteProduct
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6. 
-Run `npm install` in the project directory to get started. Then get the backend server running locally by following the instructions from https://github.com/Abasibiangake/backendeliteproduct. 
+Run `npm install` in the project directory to get started. Then get the backend server running locally by following the instructions from https://github.com/Abasibiangake/Backend-EliteProduct. 
 
 ## Development server
 
