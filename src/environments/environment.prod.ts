@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiurl: "https://elite-product-backend-comp229.herokuapp.com/"
 };

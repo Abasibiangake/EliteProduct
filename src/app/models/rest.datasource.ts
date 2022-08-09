@@ -6,6 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Product } from "./product.model";
 import { User } from "./user.model";
 import { ResponseModel } from "./response.model";
+import { environment } from "src/environments/environment";
 
 
 @Injectable()
@@ -16,7 +17,7 @@ export class RestDataSource {
 
     //Localhost:1000
     constructor(private http: HttpClient) {
-        this.baseUrl = "http://localhost:1000/";
+        this.baseUrl = environment.apiurl;    //"http://localhost:1000/";
         console.log(this.baseUrl);
     }
 
