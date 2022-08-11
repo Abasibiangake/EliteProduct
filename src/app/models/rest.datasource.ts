@@ -40,7 +40,7 @@ export class RestDataSource {
     }
 
     updateProduct(item: Product): Observable<ResponseModel> {
-        return this.http.put<ResponseModel>(`${this.baseUrl}products/edit/${item.id}`,
+        return this.http.put<ResponseModel>(`${this.baseUrl}products/edit/${item._id}`,
             item, this.provideToken()).pipe(map(response => {
                 return response;
             }),
