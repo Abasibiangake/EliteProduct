@@ -1,13 +1,10 @@
 <app-header [title]="title"></app-header>
-    <!-- <div>Clothing page</div> -->
+
     <main class="container">
         <div class="column">
             <h1 style="margin-left: 3%; padding-bottom: 2%;">{{title}} </h1>
             <br>
 
-            <!-- <% for (let i=0;i<list.length;i++){%>
-            <% if (list[i].category=='Outdoor') { %> -->
-             <!-- <% for (let i=0;i<list.length;i++){%> -->
                 <tr *ngFor="let list of productList">
                     <div *ngIf = "list.category==='Outdoor' "> 
                     <div class="row">
@@ -33,7 +30,6 @@
                                 </a>
                             </div>
         
-                            <!-- <img id="image" src="<%=`/images/clothing/${list[i].condition.image}`%>" /> -->
                         </div>
                     </div>
                 </div>
