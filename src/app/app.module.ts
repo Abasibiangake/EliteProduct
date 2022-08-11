@@ -31,7 +31,7 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
     AuthModule,
     RouterModule.forRoot([
       { path: "", component: StoreComponent },
-      {path: "products/add", component: AddEditComponent},
+      // {path: "products/add", component: AddEditComponent},
       { path: "categories/clothing", component: ClothingCategoryComponent },
       { path: "categories/furniture", component: FurnitureCategoryComponent },
       { path: "categories/vehicle", component: VehicleCategoryComponent },

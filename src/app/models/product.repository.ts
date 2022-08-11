@@ -25,7 +25,7 @@ export class ProductRepository {
 
     //get specific product
     getProduct(id: string): Product {
-        return (this.products.find(p => p.id === id)!);
+        return (this.products.find(p => p._id === id)!);
     }
 
     //get list of categories
@@ -43,10 +43,10 @@ export class ProductRepository {
     async saveProduct(item: Product) {
 
         // If it does not have id, then create a new item.
-        if (item.id == null || item.id == "") {
+        if (item._id == null || item._id == "") {
             this.dataSource.insertProduct(item)
                 .subscribe(response => {
-                    if(response.id) // If API created
+                    if(response._id) // If API created
                     {
                         this.products.push(response);
                     }
@@ -61,7 +61,7 @@ export class ProductRepository {
             this.dataSource.updateProduct(item).subscribe(response => {
                 if (response.success) {
                     this.products.splice(this.products.
-                        findIndex(i => i.id == item.id), 1, item);
+                        findIndex(i => i._id == item._id), 1, item);
                 }
                 else{
                     alert(`Error: ${response.message}`);
@@ -75,7 +75,7 @@ export class ProductRepository {
         this.dataSource.deleteProduct(id).subscribe(response => {
             if (response.success) {
                 this.products.splice(this.products.
-                    findIndex(item => item.id == id), 1);                                
+                    findIndex(item => item._id == id), 1);                                
             }
             else{
                 alert(`Error: ${response.message}`);
