@@ -4,15 +4,12 @@
     height: 45vh; 
   } 
 }
-
-
 html, body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
 /* footer-container is a nested grid within the footer, with 7 columns */
 .topnav-container { 
     grid-column: 2 / 3;
@@ -22,8 +19,6 @@ html, body {
     grid-template-columns: 15% 45% 10% 10% 10% 10%; 
     grid-template-areas: "logo search . register signIn postAd";
   }
-
-
 .footer {
     /* position: absolute; */
     bottom: 0;
@@ -44,8 +39,6 @@ html, body {
     justify-self: center; 
     align-self: center; 
   } 
-
-
   /* footer-container is a nested grid within the footer, with 3 columns and 2 rows */
   .footer-container { 
     grid-column: 2 / 3;
@@ -149,15 +142,9 @@ html, body {
     border: none;
   }
 
-
-
   .newsletter .text-input button:hover {
     background: #ccc;
   }
-  
-  /* .text-input input { 
-    border-radius: 0; 
-  }  */
   
   .footer a { 
     color: white; 
@@ -337,25 +324,3 @@ html, body {
     box-sizing: border-box;
     font-size: 16px;
   }
-
-  /* .btn{
-    color: white;
-    background-color: rgb(107, 36, 36);
-    padding: .95rem 1.7rem;
-    border-radius: .8rem;
-    text-decoration: none;
-    font-weight: bold;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 12rem;
-    align-self: center;
-  }
-  .btn:hover{
-    background-color: rgb(197, 84, 84);
-    color: white;
-  }
-  .btn:focus{
-    color: black
-  }
-  */
