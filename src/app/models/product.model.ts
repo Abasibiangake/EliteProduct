@@ -2,7 +2,7 @@
 export class Product {
     
     constructor(
-        public _id?: string,
+        public id?: string,
         public image?: string,
         public condition?: string,
         public title?: string,
