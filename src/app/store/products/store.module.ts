@@ -9,6 +9,9 @@ import { StoreComponent } from "./store.component";
 import { RouterModule } from "@angular/router";
 import { PartialsModule } from '../partials/partials.module';
 import { AddEditComponent } from "./add_edit.component";
+import {CategoriesModule} from '../categories/categories.module';
+//import { ClothingCategoryComponent } from './store/categories/clothing.component';
+
 
 
 @NgModule({
