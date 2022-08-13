@@ -10,12 +10,8 @@ body {
 .column {
   /* float: left; */
   /* width: 25%; */
-  /* padding: 0 10px; */
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  flex-flow: row wrap;
-  justify-content: center;
+  padding: 0 10px;
+
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -24,6 +20,11 @@ body {
   margin-bottom: 5rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 /* Clear floats after the columns */
