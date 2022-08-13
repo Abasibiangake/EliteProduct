@@ -18,18 +18,24 @@
                             <p>{{list.condition}} </p>
                             <p>${{list.price}} </p>
                             <br/>
-                            <div class="social-icons" style="width:fit-content;">
-                                <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
-                                    Add to Cart</a>
+                            <section class="social-icons" style="width:fit-content;">
+                                <section>
+                                    <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                        View Product</a>
+                                    <a [routerLink]="['/products/message/', list._id]" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                        Message Owner</a>
+                                </section>
+                                
                                    
-                                    
-                                <a [routerLink]="['/products/edit/', list._id]" class="btn btn-primary btn-sm" style="margin-left:1rem;">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                                <a routerLink="/products/delete/{{list._id}}" class="btn btn-danger btn-sm" style="margin-left: 1rem;">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                            </div>
+                                <section>
+                                    <a [routerLink]="['/products/edit/', list._id]" class="btn btn-primary btn-sm" style="margin-left:1rem;">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <a (click)="deleteMethod(list._id)"  class="btn btn-danger btn-sm" style="margin-left: 1rem;">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </section>    
+                            </section>
         
                         </div>
                     </div>
