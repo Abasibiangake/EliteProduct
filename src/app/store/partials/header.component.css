@@ -9,8 +9,6 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("../../../assets/images/logo.png");
-  background-size: cover;
 }
 /* footer-container is a nested grid within the footer, with 7 columns */
 .topnav-container { 
