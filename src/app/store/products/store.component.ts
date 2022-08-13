@@ -5,7 +5,7 @@ import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawes
 import { Router } from "@angular/router";
 import { Product } from "../../models/product.model";
 import { ProductRepository } from "../../models/product.repository";
-import { faClock, faLaptop, faLeaf, faLocationDot, faTruck } from '@fortawesome/free-solid-svg-icons';
+import { faClock, fasellcast, faLeaf, faLocationDot, faTruck } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class StoreComponent implements OnInit {
     // titleAd = ""
     faLocation = faLocationDot
     faClock = faClock
-    faLaptop = faLaptop
+    fasellcast = fasellcast
     faLeaf = faLeaf
     faTruck = faTruck
 
