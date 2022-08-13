@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+.computers {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 
 section {
   color: rgb(32, 31, 31);
