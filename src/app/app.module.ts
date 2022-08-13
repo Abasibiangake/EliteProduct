@@ -16,7 +16,7 @@ import { FurnitureCategoryComponent } from './store/categories/furniture.compone
 import { OutdoorCategoryComponent } from './store/categories/outdoor.component';
 import { ElectronicsCategoryComponent } from './store/categories/electronics.component';
 import { VehicleCategoryComponent } from './store/categories/vehicle.component';
-
+import {MessageComponent} from './store/message/message.component';
 
 // import { CheckoutComponent } from "./store/checkout.component";
 // import { CartDetailComponent } from "./store/cartDetail.component";
@@ -38,7 +38,7 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
       { path: "categories/vehicle", component: VehicleCategoryComponent },
       { path: "categories/electronics", component: ElectronicsCategoryComponent },
       { path: "categories/outdoor", component: OutdoorCategoryComponent },
-
+      { path: "products/message/:id", component: MessageComponent},
       { path: "products/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
       { path: "products/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "users/signin", component: SignInComponent },

@@ -19,8 +19,13 @@
                     <p style="font-weight:bold">${{list.price}} </p>
                     <br/>
                     <div class="social-icons" style="width:fit-content;">
-                        <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
-                            Add to Cart</a>
+                        <section>
+                            <a routerLink="#" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                View Product</a>
+                            <a [routerLink]="['/products/message/', list._id]" class="btn btn-primary btn-sm" style="height:3rem; margin-left: 1rem;">
+                                Message Owner</a>
+                        </section>
+                        
                            
                             
                         <a [routerLink]="['/products/edit/', list._id]" class="btn btn-primary btn-sm" style="margin-left:1rem;">
