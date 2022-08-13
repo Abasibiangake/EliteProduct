@@ -19,20 +19,13 @@
     <!-- view profile button -->
     <div class="topnav-profile">
       <a *ngIf="auth.username != null" class="nav-link" routerLink="/me">
-        <i class="fa fa-user" aria-hidden="true" style="color:navy"></i>
+        <i class="fa fa-user" aria-hidden="true" style="color:navy; width:40px;"></i>
       </a>
     </div>
 
     <!-- post ad button -->
     <div class="topnav-postAd">
       <a href="/products/add">Post Ad</a>
-    </div>
-
-    <!-- view profile button -->
-    <div class="profile">
-      <a *ngIf="auth.username != null" class="nav-link" routerLink="/me">
-        <i class="fa fa-user" aria-hidden="true"></i>
-      </a>
     </div>
 
     <!-- sign-in/out button -->
