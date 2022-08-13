@@ -12,13 +12,13 @@ import { PartialsModule } from '../partials/partials.module';
 import { AddEditComponent } from "./add_edit.component";
 import {CategoriesModule} from '../categories/categories.module';
 import { MessageModule } from '../message/message.module';
-
+import { fullPageAdComponent } from "./fullPageAd.component";
 
 
 @NgModule({
     imports: [BrowserModule, PartialsModule, FormsModule, RouterModule, FontAwesomeModule],
-    declarations: [StoreComponent, AddEditComponent],
-    exports: [StoreComponent, AddEditComponent]
+    declarations: [StoreComponent, AddEditComponent, fullPageAdComponent],
+    exports: [StoreComponent, AddEditComponent, fullPageAdComponent]
 
 })
 

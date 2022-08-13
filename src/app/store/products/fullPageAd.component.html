@@ -1,0 +1,74 @@
+<app-header [title]="title"></app-header>
+<main class="container">
+    <div class="column">
+        <h1 style="margin-left: 3%; padding-bottom: 2%;">{{title}}</h1>
+        <br>
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y bg">
+        <div class="container">
+    
+        <article class="card">
+            <div class="card-body">
+                    <div class="row">
+                                <!-- ===========> IMAGES ============================================   -->
+                        <aside class="col-md-6">
+                                <article class="gallery-wrap">
+                                    <div class="card img-big-wrap">
+                                        <img id="itemImage" src="{{item.image }}">
+                                        
+                                        <!-- POP UP MODAL (BIGGER IMAGE) -->
+                                        <div id="myModal" class="modal">
+                                            <span class="close">&times;</span>
+                                            <img class="modal-content" id="img01">
+                                        </div>
+
+                                    </div> <!-- card img-big-wrap.// -->
+                                </article> <!-- gallery-wrap .end// -->
+                        </aside>
+                        <main class="col-md-6">
+                            <article>
+                                <!-- ===========> CATEGORY ============================================   -->
+                                <a (href="/categories/"+ {{item.category}}) class="text-primary btn-link">{{item.category}}</a>
+
+                                <!-- ===========> TITLE  ============================================   -->
+                                <h3 class="title">{{item.title}}</h3>      
+                                <hr>
+                    
+                                <!-- ===========> DESCRIPTION ============================================   -->
+                                <div class="mb-3">
+                                    <h6>Short description</h6>
+                                    <ul class="list-dots mb-0">
+                                        <li>{{item.description}}</li>
+                                    </ul>
+                                </div>
+
+                                <!-- ===========> CONDITION ============================================   -->
+                                <div class="form-group">
+                                    <label class="text-muted">Condition</label>
+                                        <label class="js-check btn btn-check mr-1">
+                                            <input type="radio" name="option_size" value="option1" checked="">
+                                            <span>{{item.condition}}</span>
+                                        </label>
+                                    </div>            
+      
+                                <!-- ===========> PRICE  ============================================   -->
+                                <div class="mb-3">
+                                    <var class="price h4">${{item.price}}</var> <br>
+                                </div>
+        
+                                <div class="mb-4">
+                                    <a href="#" class="btn btn-primary mr-1">Send a message</a>
+                                    <a href="#" class="btn btn-light">Add to cart</a>
+                                </div>
+                                
+                            </article> 
+                        </main>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+</div>
+</main>
+<app-footer></app-footer>
