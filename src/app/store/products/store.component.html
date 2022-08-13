@@ -1,100 +1,49 @@
-<app-header [title]="titleAd"></app-header>
+<app-header [title]="title"></app-header>
 
-<div class="latestAds-container">
-<h1 style="margin-left: 3%; padding-bottom: 2%;">{{titleAd}}</h1>
-<div class="row">
-  
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/Electronics.jpg" width="600" height="300" >
-      </a>
-      <h2>HD Full Screen TV</h2>
-      <h3>Electronics</h3>
-      <p>$ 25000.00</p>
-    </div>
-  </div>
+<section class="features-section">
+  <div>
+    <h4 class="features">Features</h4>
+    <p class="features-description">Rent different kinds of laptops, PC's, MacBook, Servers according to your
+      preferences, we have it all!</p>
+    <div class="computers">
 
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/babyProductImage.png" width="600" height="300" >
-      </a>
-      <h2>Portable Baby crib</h2>
-      <h3>Baby Product</h3>
-      <p>$ 12800.00</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/clothingImage.png" width="600" height="300" >
-      </a>
-      <h2>Flay Dress For LunchDate</h2>
-      <h3>Clothing</h3>
-      <p>$ 200.00</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/book.png" width="600" height="300" >
-      </a>
-      <h2>Sell Like Crazy By Sabri Suby</h2>
-      <h3>Books</h3>
-      <p>$ 100.00</p>
-    </div>
-  </div>
-</div>
+      <article class="services computer">
+        <fa-icon [icon]="faLocation" size="3x"></fa-icon>
+        <h5 class="article-h5">We are everywhere</h5>
+        <p class="article-description">We have different branches and service centers across Toronto</p>
+      </article>
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/healthandpersonal-image.png" width="600" height="300" >
-      </a>
-      <h2>Smart Oral Irrigator</h2>
-      <h3>Health Care</h3>
-      <p>$ 1288.00</p>
-    </div>
-  </div>
+      <article class="services computer">
+        <fa-icon [icon]="faClock" size="3x">></fa-icon>
 
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/gamingProduct.png" width="600" height="300" >
-      </a>
-      <h2>Game Pad</h2>
-      <h3>Gaming</h3>
-      <p>$ 250.00</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/kitchenProduct.png" width="600" height="300" >
-      </a>
-      <h2>Fruit Squeezer</h2>
-      <h3>Kitchen</h3>
-      <p>$ 50.00</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <a class="img-container" href="#">
-        <img class="imgview" src="assets/images/shoes.png" width="600" height="300" >
-      </a>
-      <h2>Stiletto Heels</h2>
-      <h3>Shoes</h3>
-      <p>$ 145.00</p>
-    </div>
-  </div>
-</div>
+        <h5 class="article-h5">Always Available</h5>
+        <p>Our qualified and reliable staff will be there to help you 24 x 7.</p>
+      </article>
 
-</div>
-  
+      <article class="services computer">
+        <fa-icon [icon]="faLaptop" size="3x">></fa-icon>
+
+        <h5 class="article-h5">Customizable</h5>
+        <p>You can customized preferred specs based on the CPU, Memory, Disk Space, etc.</p>
+      </article>
+
+      <article class="services computer">
+        <fa-icon [icon]="faLeaf" size="3x">></fa-icon>
+
+        <h5 class="article-h5">No Hassle</h5>
+        <p>Choose your computer, signup, and rent. That's it! its easy.</p>
+      </article>
+
+      <article class="services computer">
+        <fa-icon [icon]="faTruck" size="3x">></fa-icon>
+
+        <h5 class="article-h5">Fast Delivery</h5>
+        <p>Delivery at your doorstep...fast.....very fast!</p>
+      </article>
+
+    </div>
+
+  </div>
+  <hr>
+</section>
 <app-footer></app-footer>

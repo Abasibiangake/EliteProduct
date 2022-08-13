@@ -9,6 +9,7 @@ import { StoreComponent } from "./store/products/store.component";
 import { StoreModule } from "./store/products/store.module";
 import { AuthModule } from './store/auth/auth.module';
 import { AuthGuard } from "./store/auth/auth.guard";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {CategoriesModule} from './store/categories/categories.module';
 import { ClothingCategoryComponent } from './store/categories/clothing.component';
 import { FurnitureCategoryComponent } from './store/categories/furniture.component';
@@ -46,7 +47,8 @@ import { VehicleCategoryComponent } from './store/categories/vehicle.component';
             // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       // { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
       { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
-    ])
+    ]),
+    FontAwesomeModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

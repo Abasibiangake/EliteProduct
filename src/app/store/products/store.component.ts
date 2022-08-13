@@ -1,8 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 // import { Cart } from "../model/cart.model";
+import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
+
 import { Router } from "@angular/router";
 import { Product } from "../../models/product.model";
 import { ProductRepository } from "../../models/product.repository";
+import { faClock, faLaptop, faLeaf, faLocationDot, faTruck } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
     selector: "store",
@@ -10,9 +14,15 @@ import { ProductRepository } from "../../models/product.repository";
     styleUrls: ['store.component.css']
 })
 
-export class StoreComponent {
+export class StoreComponent implements OnInit {
     title = "HomePage";
-    titleAd = "Latest Ads"
+    // titleAd = ""
+    faLocation = faLocationDot
+    faClock = faClock
+    faLaptop = faLaptop
+    faLeaf = faLeaf
+    faTruck = faTruck
+
     // constructor(private router: Router) { }
 
     constructor(private repository: ProductRepository,
@@ -29,6 +39,8 @@ export class StoreComponent {
     //         this.router.navigateByUrl("product/delete/"+id);
     //     }
     // }
+    ngOnInit(): void {
+    }
 }
 
 
