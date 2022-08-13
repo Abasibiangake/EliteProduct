@@ -3,8 +3,14 @@
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
+  background-color: #EEF4F7;
 
+}
+body{
+  background-image: url("../../../assets/images/logo.png");
+  background-size: cover;
+  position: relative;
+}
 .products {
   display: flex;
   gap: 2rem;
