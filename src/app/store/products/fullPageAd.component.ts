@@ -20,7 +20,9 @@ export class fullPageAdComponent {
 
     constructor(private repository: ProductRepository, private router: Router, activeRoute: ActivatedRoute) 
     { 
-    this.item = this.repository.getProduct(activeRoute.snapshot.params["id"]);
+        if (activeRoute.snapshot.params["mode"] == "detail") {
+            this.item = this.repository.getProduct(activeRoute.snapshot.params["id"]);
+        }
     }
 
 
