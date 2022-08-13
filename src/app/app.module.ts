@@ -38,7 +38,7 @@ import { MessageModule } from './store/message/message.module';
       { path: "categories/vehicle", component: VehicleCategoryComponent },
       { path: "categories/electronics", component: ElectronicsCategoryComponent },
       { path: "categories/outdoor", component: OutdoorCategoryComponent },
-      { path: "products/message/:id", component: MessageComponent},
+      { path: "products/message/:id", component: MessageComponent,canActivate: [AuthGuard]},
       { path: "products/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
       { path: "products/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "users/signin", component: SignInComponent },
