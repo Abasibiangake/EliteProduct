@@ -8,8 +8,9 @@
 
             <tr *ngFor="let list of productList">
             <div *ngIf = "list.category==='Clothing' "> 
-            <div class="row">
-            <div class="column">
+            <!-- <div class="row">
+            <div class="column"> -->
+            <div class="products">
                 <div class="card">
                     <a class="img-container" routerLink="#">
                         <img class="imgview" src="{{list.image }}" width="600" height="300" >
@@ -39,7 +40,7 @@
 
                 </div>
             </div>
-            </div>
+            <!-- </div> -->
             </div> 
             </tr>
             
