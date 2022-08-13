@@ -17,7 +17,7 @@ import { OutdoorCategoryComponent } from './store/categories/outdoor.component';
 import { ElectronicsCategoryComponent } from './store/categories/electronics.component';
 import { VehicleCategoryComponent } from './store/categories/vehicle.component';
 import {MessageComponent} from './store/message/message.component';
-
+import { MessageModule } from './store/message/message.module';
 // import { CheckoutComponent } from "./store/checkout.component";
 // import { CartDetailComponent } from "./store/cartDetail.component";
 // import { StoreFirstGuard } from "./storeFirst.guard";
