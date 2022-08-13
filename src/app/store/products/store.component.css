@@ -4,15 +4,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
 body{
   background-image: url("../../../assets/images/logo.png");
   background-size: cover;
   position: relative;
 }
-=======
-
->>>>>>> parent of ee1f0e6 (updates)
 .products {
   display: flex;
   gap: 2rem;
