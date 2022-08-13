@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router , ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { Product } from "../../models/product.model";
 import { ProductRepository } from "../../models/product.repository";
 
@@ -13,12 +13,10 @@ import { ProductRepository } from "../../models/product.repository";
 export class ClothingCategoryComponent {
 
     title = 'Clothing Category';
-    item: Product = new Product();
 
-    constructor(private repository: ProductRepository, private router: Router, activeRoute: ActivatedRoute) 
-    { 
-    this.item = this.repository.getProduct(activeRoute.snapshot.params["id"]);
-    }
+    constructor(private repository: ProductRepository,
+        private router: Router) 
+    { }
 
     get productList(): Product[] {
         return this.repository.getProducts("Clothing");        
