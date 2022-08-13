@@ -19,7 +19,7 @@ html, body {
     
     /* ACTING AS A GRID CONTAINER */ 
     grid-template-columns: 15% 45% 10% 10% 10% 10%; 
-    grid-template-areas: "logo search . register signIn postAd";
+    grid-template-areas: "logo search . profile register signIn postAd";
   }
 .footer {
     /* position: absolute; */
