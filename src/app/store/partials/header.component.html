@@ -21,6 +21,13 @@
       <a href="/products/add">Post Ad</a>
     </div>
 
+    <!-- view profile button -->
+    <div class="profile">
+      <a *ngIf="auth.username != null" class="nav-link" routerLink="/me">
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </a>
+    </div>
+
     <!-- sign-in/out button -->
     <div class="topnav-signIn">
       <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out ({{ auth.username }})</a>
