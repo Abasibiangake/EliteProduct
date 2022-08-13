@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.computers {
+.products {
   display: flex;
   gap: 2rem;
   padding: 2rem;
@@ -21,7 +21,7 @@ section {
   font-family: 'Roboto',
     sans-serif;
 }
-.computer {
+.product {
   background-color: white;
   flex-basis: 30%;
   min-width: 20rem;
