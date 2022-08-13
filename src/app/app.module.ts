@@ -18,6 +18,7 @@ import { ElectronicsCategoryComponent } from './store/categories/electronics.com
 import { VehicleCategoryComponent } from './store/categories/vehicle.component';
 import {MessageComponent} from './store/message/message.component';
 import { MessageModule } from './store/message/message.module';
+import { fullPageAdComponent } from './store/products/fullPageAd.component';         
 // import { CheckoutComponent } from "./store/checkout.component";
 // import { CartDetailComponent } from "./store/cartDetail.component";
 // import { StoreFirstGuard } from "./storeFirst.guard";
@@ -43,7 +44,7 @@ import { MessageModule } from './store/message/message.module';
       { path: "products/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "users/signin", component: SignInComponent },
       { path: "users/register", component: RegisterComponent },
-      
+      { path: "products/detail/:id", component: fullPageAdComponent},
             // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       // { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
       { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
