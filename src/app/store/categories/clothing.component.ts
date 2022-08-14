@@ -29,7 +29,7 @@ export class ClothingCategoryComponent {
     }
 
     getDetailMethod(id:string){
-        this.router.navigateByUrl("products/detail/info/"+id);
+        this.router.navigateByUrl("products/info/details/"+id);
 
     }
     
