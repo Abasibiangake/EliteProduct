@@ -27,5 +27,10 @@ export class ClothingCategoryComponent {
             this.router.navigateByUrl("products/delete/"+id);
         }
     }
+
+    getDetailMethod(id:string){
+        this.router.navigateByUrl("products/detail/info/"+id);
+
+    }
     
 }

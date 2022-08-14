@@ -44,7 +44,7 @@ import { fullPageAdComponent } from './store/products/fullPageAd.component';
       { path: "products/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
       { path: "users/signin", component: SignInComponent },
       { path: "users/register", component: RegisterComponent },
-      { path: "products/:mode/:id", component: fullPageAdComponent},
+      { path: "products/:mode/info/:id", component: fullPageAdComponent},
             // { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       // { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
       { path: "**", redirectTo: "" }//everything else (other paths) is redirected to home 
